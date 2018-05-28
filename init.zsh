@@ -9,7 +9,7 @@ p6df::modules::scala::external::brew() {
 
 p6df::modules::scala::init() {
 
-#  p6df::modules::scala::scalaenv::init
+  p6df::modules::scala::scalaenv::init
 }
 
 p6df::modules::scala::scalaenv::init() {
@@ -30,5 +30,3 @@ p6df::prompt::scala::line() {
 
   env_version "scala"
 }
-
-p6df::modules::scala::init
