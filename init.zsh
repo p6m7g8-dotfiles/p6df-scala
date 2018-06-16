@@ -9,16 +9,17 @@ p6df::modules::scala::external::brew() {
 
 p6df::modules::scala::init() {
 
-  p6df::modules::scala::scalaenv::init
+  p6df::modules::scala::scalaenv::init "$P6_DFZ_SRC_DIR"
 }
 
 p6df::modules::scala::scalaenv::init() {
-    [ -n "$DISABLE_ENVS" ] && return
+    local dir="$1"
 
-    SCALAENV_ROOT=/Users/pgollucci/.local/share/scalaenv/scalaenv
+    [ -n "$DISABLE_ENVS" ] && return
+    SCALAENV_ROOT=$dir/scalaenv/scalaenv
 
     if [ -x $SCALAENV_ROOT/bin/scalaenv ]; then
-      export SCALENV_ROOT
+      export SCALAENV_ROOT
       export HAS_SCALAENV=1
 
       p6dfz::util::path_if $SCALAENV_ROOT/bin
