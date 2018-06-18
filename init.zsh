@@ -5,6 +5,12 @@ p6df::modules::scala::deps()    {
 }
 
 p6df::modules::scala::external::brew() {
+
+}
+
+p6df::modules::scala::home::symlink() {
+
+  # XXX: ENV move
 }
 
 p6df::modules::scala::init() {
