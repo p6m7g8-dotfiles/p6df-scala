@@ -35,5 +35,5 @@ p6df::modules::scala::scalaenv::init() {
 
 p6df::prompt::scala::line() {
 
-  env_version "scala"
+  p6_lang_version "scala"
 }
