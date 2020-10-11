@@ -6,6 +6,7 @@
 #>
 ######################################################################
 p6df::modules::scala::version() { echo "0.0.1" }
+
 ######################################################################
 #<
 #
@@ -15,6 +16,7 @@ p6df::modules::scala::version() { echo "0.0.1" }
 ######################################################################
 p6df::modules::scala::deps()    {
 	ModuleDeps=(
+    p6m7g8/p6common
 	)
 }
 
@@ -74,18 +76,18 @@ p6df::modules::scala::scalaenv::init() {
       export HAS_SCALAENV=1
 
       p6df::util::path_if $SCALAENV_ROOT/bin
-      eval "$(scalaenv init - zsh)"
+      eval "$(p6_run_code scalaenv init - zsh)"
     fi
 }
 
 ######################################################################
 #<
 #
-# Function: p6df::prompt::scala::line()
+# Function: p6df::modules::scala::prompt::line()
 #
 #>
 ######################################################################
-p6df::prompt::scala::line() {
+p6df::modules::scala::prompt::line() {
 
   p6_scala_prompt_info
 }
@@ -99,5 +101,6 @@ p6df::prompt::scala::line() {
 ######################################################################
 p6_scala_prompt_info() {
 
+  echo -n "scala:\t  "
   p6_lang_version "scala"
 }
