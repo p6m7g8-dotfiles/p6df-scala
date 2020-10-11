@@ -6,5 +6,4 @@
 - p6df::modules::scala::init()
 - p6df::modules::scala::prompt::line()
 - p6df::modules::scala::scalaenv::init(dir)
-- p6df::modules::scala::version()
 
