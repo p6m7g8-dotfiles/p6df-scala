@@ -53,7 +53,7 @@ p6df::modules::scala::init() {
 # Function: p6df::modules::scala::scalaenv::init(dir)
 #
 #  Args:
-#	dir - 
+#	dir -
 #
 #>
 ######################################################################
