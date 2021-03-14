@@ -38,9 +38,11 @@
 
 - [Change Log](CHANGELOG.md)
 
-### Usage
+## Usage
 
-#### init.zsh:
+### p6df-scala:
+
+#### p6df-scala/init.zsh:
 
 - p6_scala_prompt_info()
 - p6df::modules::scala::deps()
