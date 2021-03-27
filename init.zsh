@@ -1,4 +1,3 @@
-
 ######################################################################
 #<
 #
@@ -6,10 +5,11 @@
 #
 #>
 ######################################################################
-p6df::modules::scala::deps()    {
-	ModuleDeps=(
+p6df::modules::scala::deps() {
+  ModuleDeps=(
     p6m7g8/p6common
-	)
+    scalaenv/scalaenv
+  )
 }
 
 ######################################################################
@@ -58,18 +58,18 @@ p6df::modules::scala::init() {
 #>
 ######################################################################
 p6df::modules::scala::scalaenv::init() {
-    local dir="$1"
+  local dir="$1"
 
-    [ -n "$DISABLE_ENVS" ] && return
-    SCALAENV_ROOT=$dir/scalaenv/scalaenv
+  [ -n "$DISABLE_ENVS" ] && return
+  SCALAENV_ROOT=$dir/scalaenv/scalaenv
 
-    if [ -x $SCALAENV_ROOT/bin/scalaenv ]; then
-      export SCALAENV_ROOT
-      export HAS_SCALAENV=1
+  if [ -x $SCALAENV_ROOT/bin/scalaenv ]; then
+    export SCALAENV_ROOT
+    export HAS_SCALAENV=1
 
-      p6df::util::path_if $SCALAENV_ROOT/bin
-      eval "$(p6_run_code scalaenv init - zsh)"
-    fi
+    p6df::util::path_if $SCALAENV_ROOT/bin
+    eval "$(p6_run_code scalaenv init - zsh)"
+  fi
 }
 
 ######################################################################
