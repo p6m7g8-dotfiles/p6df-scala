@@ -15,8 +15,29 @@ p6df::modules::scala::deps() {
 ######################################################################
 #<
 #
+# Function: p6df::modules::scala::langs()
+#
+#>
+######################################################################
+p6df::modules::scala::langs() {
+
+  local previous
+  previous=$(scalaenv install -l | grep scala-2.1 | sed -e 's, ,,g' | sort | tail -2 | head -1)
+  scalaenv uninstall -f $previous
+
+  local latest
+  latest=$(scalaenv install -l | grep scala-2.1 | sed -e 's, ,,g' | sort | tail -1)
+  scalaenv install -f $latest
+  scalaenv global $latest
+  scalaenv rehash
+}
+
+######################################################################
+#<
+#
 # Function: p6df::modules::scala::init()
 #
+#  Environment:	 P6_DFZ_SRC_DIR
 #>
 ######################################################################
 p6df::modules::scala::init() {
@@ -32,6 +53,7 @@ p6df::modules::scala::init() {
 #  Args:
 #	dir -
 #
+#  Environment:	 DISABLE_ENVS HAS_SCALAENV SCALAENV_ROOT
 #>
 ######################################################################
 p6df::modules::scala::scalaenv::init() {
@@ -66,6 +88,7 @@ p6df::modules::scala::prompt::line() {
 #
 # Function: p6_scala_prompt_info()
 #
+#  Depends:	 p6_lang
 #>
 ######################################################################
 p6_scala_prompt_info() {
