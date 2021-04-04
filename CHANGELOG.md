@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.1.1](https://github.com/p6m7g8/p6df-scala/compare/v2.1.0...v2.1.1) (2021-04-04)
+
+
+### Features
+
+* **api:** +p6df::modules::scala::langs() ([#17](https://github.com/p6m7g8/p6df-scala/issues/17)) ([d7a6aaa](https://github.com/p6m7g8/p6df-scala/commit/d7a6aaaee2435d7ea0c77a22fbf0a60d4d59048d))
+* **api:** returns to service ([#15](https://github.com/p6m7g8/p6df-scala/issues/15)) ([c3b0f81](https://github.com/p6m7g8/p6df-scala/commit/c3b0f816ad8b78ae45a344413ba0a156dbf56dd1))
+
+
+* **link:** remove rendundant symlinks; echo for now ([#16](https://github.com/p6m7g8/p6df-scala/issues/16)) ([954d807](https://github.com/p6m7g8/p6df-scala/commit/954d807cb7786c176be1683b47ab9d057ad424d2))
+* **README:** updates generator ([#14](https://github.com/p6m7g8/p6df-scala/issues/14)) ([4b82c74](https://github.com/p6m7g8/p6df-scala/commit/4b82c74b39994fb36a02bc0e9cbb130174ceb83e))
+* Coc -> .github ([94f97f3](https://github.com/p6m7g8/p6df-scala/commit/94f97f3a37f4fd0628c979a6ac718480e85a7c53))
+
 ## [2.1.0](https://github.com/p6m7g8/p6df-scala/compare/v2.0.0...v2.1.0) (2020-12-06)
 
 
