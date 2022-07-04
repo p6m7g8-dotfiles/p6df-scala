@@ -43,6 +43,23 @@ p6df::modules::scala::langs() {
 p6df::modules::scala::init() {
 
   p6df::modules::scala::scalaenv::init "$P6_DFZ_SRC_DIR"
+
+  p6df::modules::scala::prompt::init
+}
+
+######################################################################
+#<
+#
+# Function: p6df::modules::scala::prompt::init()
+#
+#>
+######################################################################
+p6df::modules::scala::prompt::init() {
+
+  p6df::core::prompt::line::add "p6_lang_prompt_info"
+  p6df::core::prompt::line::add "p6_lang_envs_prompt_info"
+
+  p6df::core::prompt::lang::line::add scala
 }
 
 ######################################################################
@@ -74,25 +91,17 @@ p6df::modules::scala::scalaenv::init() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::scala::prompt::line()
+# Function: str str = p6_scala_env_prompt_info()
 #
+#  Returns:
+#	str - str
+#
+#  Environment:	 SCALAENV_ROOT
 #>
 ######################################################################
-p6df::modules::scala::prompt::line() {
+p6_scala_env_prompt_info() {
 
-  p6_scala_prompt_info
-}
+  local str="scalaenv_root=$SCALAENV_ROOT"
 
-######################################################################
-#<
-#
-# Function: p6_scala_prompt_info()
-#
-#  Depends:	 p6_lang
-#>
-######################################################################
-p6_scala_prompt_info() {
-
-  echo -n "scala:\t  "
-  p6_lang_version "scala"
+  p6_return_str "$str"
 }
