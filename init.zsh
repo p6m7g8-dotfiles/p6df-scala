@@ -83,7 +83,7 @@ p6df::modules::scala::scalaenv::init() {
     export SCALAENV_ROOT
     export HAS_SCALAENV=1
 
-    p6df::util::path_if $SCALAENV_ROOT/bin
+    p6_path_if $SCALAENV_ROOT/bin
     eval "$(p6_run_code scalaenv init - zsh)"
   fi
 }
