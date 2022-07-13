@@ -101,7 +101,7 @@ p6df::modules::scala::scalaenv::init() {
 ######################################################################
 p6_scala_env_prompt_info() {
 
-  local str="scalaenv_root=$SCALAENV_ROOT"
+  local str="scalaenv_root:\t  $SCALAENV_ROOT"
 
   p6_return_str "$str"
 }
