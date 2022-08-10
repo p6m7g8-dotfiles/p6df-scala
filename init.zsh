@@ -1,3 +1,4 @@
+# shellcheck shell=bash
 ######################################################################
 #<
 #
@@ -30,6 +31,8 @@ p6df::modules::scala::langs() {
   scalaenv install -f $latest
   scalaenv global $latest
   scalaenv rehash
+
+  p6_return_void
 }
 
 ######################################################################
@@ -45,6 +48,8 @@ p6df::modules::scala::init() {
   p6df::modules::scala::scalaenv::init "$P6_DFZ_SRC_DIR"
 
   p6df::modules::scala::prompt::init
+
+  p6_return_void
 }
 
 ######################################################################
@@ -70,22 +75,22 @@ p6df::modules::scala::prompt::init() {
 #  Args:
 #	dir -
 #
-#  Environment:	 DISABLE_ENVS HAS_SCALAENV SCALAENV_ROOT
+#  Environment:	 HAS_SCALAENV P6_DFZ_LANGS_DISABLE SCALAENV_ROOT
 #>
 ######################################################################
 p6df::modules::scala::scalaenv::init() {
   local dir="$1"
 
-  [ -n "$DISABLE_ENVS" ] && return
-  SCALAENV_ROOT=$dir/scalaenv/scalaenv
-
-  if [ -x $SCALAENV_ROOT/bin/scalaenv ]; then
-    export SCALAENV_ROOT
-    export HAS_SCALAENV=1
+  local SCALAENV_ROOT=$dir/scalaenv/scalaenv
+  if p6_string_blank "$P6_DFZ_LANGS_DISABLE" && p6_file_executable "$SCALAENV_ROOT/bin/scalaenv"; then
+    p6_env_export SCALAENV_ROOT "$SCALENV_ROOT"
+    p6_env_export HAS_SCALAENV 1
 
     p6_path_if $SCALAENV_ROOT/bin
-    eval "$(p6_run_code scalaenv init - zsh)"
+    eval "$(scalaenv init - zsh)"
   fi
+
+  p6_return_void
 }
 
 ######################################################################
