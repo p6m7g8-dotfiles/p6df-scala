@@ -47,9 +47,9 @@
 - p6df::modules::scala::deps()
 - p6df::modules::scala::init()
 - p6df::modules::scala::langs()
-- p6df::modules::scala::prompt::init()
-- p6df::modules::scala::scalaenv::init(dir)
-- str str = p6_scala_env_prompt_info()
+- p6df::modules::scala::scalaenv::latest()
+- p6df::modules::scala::scalaenv::latest::installed()
+- str str = p6df::modules::scala::env::prompt::info()
 
 
 
