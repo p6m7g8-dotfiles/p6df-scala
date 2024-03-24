@@ -10,8 +10,7 @@
   - [Summary](#summary)
   - [Contributing](#contributing)
   - [Code of Conduct](#code-of-conduct)
-  - [Changes](#changes)
-    - [Usage](#usage)
+  - [Usage](#usage)
   - [Author](#author)
 
 ### Badges
@@ -34,25 +33,40 @@
 
 - [Code of Conduct](https://github.com/p6m7g8/.github/blob/master/CODE_OF_CONDUCT.md)
 
-## Changes
-
-- [Change Log](CHANGELOG.md)
-
 ## Usage
+
+
+### Aliases
+
+
+### Functions
 
 ### p6df-scala:
 
 #### p6df-scala/init.zsh:
 
 - p6df::modules::scala::deps()
-- p6df::modules::scala::init()
+- p6df::modules::scala::init(_module, dir)
 - p6df::modules::scala::langs()
-- p6df::modules::scala::scalaenv::latest()
-- p6df::modules::scala::scalaenv::latest::installed()
 - str str = p6df::modules::scala::env::prompt::info()
 
 
+### p6df-scala/lib:
 
+#### p6df-scala/lib/scalaenv.sh:
+
+- p6df::modules::scala::scalaenv::latest()
+- p6df::modules::scala::scalaenv::latest::installed()
+
+
+
+## Hier
+```text
+.
+└── scalaenv.sh
+
+1 directory, 1 file
+```
 ## Author
 
 Philip M . Gollucci <pgollucci@p6m7g8.com>

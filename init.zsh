@@ -38,36 +38,20 @@ p6df::modules::scala::langs() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::scala::scalaenv::latest()
+# Function: p6df::modules::scala::init(_module, dir)
 #
-#>
-######################################################################
-p6df::modules::scala::scalaenv::latest() {
-
-  scalaenv install -l | grep scala-2.1 | sed -e 's, ,,g' | sort | tail -1
-}
-
-######################################################################
-#<
-#
-# Function: p6df::modules::scala::scalaenv::latest::installed()
-#
-#>
-######################################################################
-p6df::modules::scala::scalaenv::latest::installed() {
-
-  scalaenv install -l | grep scala-2.1 | sed -e 's, ,,g' | sort | tail -2 | head -1
-}
-
-######################################################################
-#<
-#
-# Function: p6df::modules::scala::init()
+#  Args:
+#	_module -
+#	dir -
 #
 #  Environment:	 P6_DFZ_SRC_DIR
 #>
 ######################################################################
 p6df::modules::scala::init() {
+  local _module="$1"
+  local dir="$2"
+
+  p6_bootstrap "$dir"
 
   p6df::core::lang::mgr::init "$P6_DFZ_SRC_DIR/scalaenv/scalaenv" "scala"
 
