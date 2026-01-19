@@ -79,7 +79,10 @@ p6df::modules::scala::prompt::env() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::scala::prompt::lang()
+# Function: str str = p6df::modules::scala::prompt::lang()
+#
+#  Returns:
+#	str - str
 #
 #>
 ######################################################################
