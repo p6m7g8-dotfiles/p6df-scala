@@ -85,23 +85,11 @@ p6df::modules::scala::prompt::env() {
 ######################################################################
 p6df::modules::scala::prompt::lang() {
 
-  local ver
+  local str
+  str=$(p6df::core::lang::prompt::lang \
+    "scala" \
+    "scalaenv version-name 2>/dev/null" \
+    "scala -nc -version 2>&1 | awk '{print $5}'")
 
-  local ver_mgr
-  ver_mgr=$(scalaenv version-name 2>/dev/null)
-  if p6_string_eq "$ver_mgr" "system"; then
-    local ver_sys="sys@"
-    local v
-    v=$(scala -nc -version 2>&1 | awk '{print $5}')
-    if p6_string_blank "$v"; then
-      ver_sys="sys:no"
-    fi
-    ver="$ver_sys"
-  else
-    ver="$ver_mgr"
-  fi
-
-  local str="scala:$ver"
-
-  p6_return "$str"
+  p6_return_str "$str"
 }
