@@ -91,8 +91,9 @@ p6df::modules::scala::prompt::lang() {
   local str
   str=$(p6df::core::lang::prompt::lang \
     "scala" \
-    "scalaenv version-name 2>/dev/null" \
-    "scala -nc -version 2>&1 | awk '{print $5}'")
+    "scalaenv version-name 2>/dev/null | sed -e 's,scala3-,,'" \
+    "scala -nc -version 2>&1 | awk '{print $5}'"
+  )
 
   p6_return_str "$str"
 }
