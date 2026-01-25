@@ -8,7 +8,7 @@
 ######################################################################
 p6df::modules::scala::scalaenv::latest() {
 
-  scalaenv install -l | grep scala-2.1 | sed -e 's, ,,g' | sort | tail -1
+  scalaenv install -l | p6_filter_row_select "scala-2.1" | p6_filter_strip_spaces | p6_filter_sort | p6_filter_row_last 1
 }
 
 ######################################################################
@@ -20,5 +20,5 @@ p6df::modules::scala::scalaenv::latest() {
 ######################################################################
 p6df::modules::scala::scalaenv::latest::installed() {
 
-  scalaenv install -l | grep scala-2.1 | sed -e 's, ,,g' | sort | tail -2 | head -1
+  scalaenv install -l | p6_filter_row_select "scala-2.1" | p6_filter_strip_spaces | p6_filter_sort | p6_filter_row_last 2 | p6_filter_row_first 1
 }
