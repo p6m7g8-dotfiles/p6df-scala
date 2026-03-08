@@ -38,8 +38,8 @@ TODO: Add a short summary of this module.
 - `p6df::modules::scala::deps()`
 - `p6df::modules::scala::init(_module, dir)`
   - Args:
-    - _module - 
-    - dir - 
+    - _module -
+    - dir -
 - `p6df::modules::scala::langs()`
 - `str str = p6df::modules::scala::prompt::env()`
 - `str str = p6df::modules::scala::prompt::lang()`
