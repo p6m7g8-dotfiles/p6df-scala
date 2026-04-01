@@ -38,42 +38,16 @@ p6df::modules::scala::langs() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::scala::init(_module, dir)
-#
-#  Args:
-#	_module -
-#	dir -
+# Function: p6df::modules::scala::langmgr::init()
 #
 #  Environment:	 P6_DFZ_SRC_DIR
 #>
 ######################################################################
-p6df::modules::scala::init() {
-  local _module="$1"
-  local dir="$2"
-
-  p6_bootstrap "$dir"
+p6df::modules::scala::langmgr::init() {
 
   p6df::core::lang::mgr::init "$P6_DFZ_SRC_DIR/scalaenv/scalaenv" "scala"
 
   p6_return_void
-}
-
-######################################################################
-#<
-#
-# Function: str str = p6df::modules::scala::prompt::env()
-#
-#  Returns:
-#	str - str
-#
-#>
-######################################################################
-p6df::modules::scala::prompt::env() {
-
-#  local str="scalaenv_root:\t  $SCALAENV_ROOT"
-  local str=""
-
-  p6_return_str "$str"
 }
 
 ######################################################################
@@ -96,4 +70,20 @@ p6df::modules::scala::prompt::lang() {
   )
 
   p6_return_str "$str"
+}
+
+######################################################################
+#<
+#
+# Function: words scala $SCALAENV_ROOT = p6df::modules::scala::prompt::env()
+#
+#  Returns:
+#	words - scala $SCALAENV_ROOT
+#
+#  Environment:	 SCALAENV_ROOT
+#>
+######################################################################
+p6df::modules::scala::prompt::env() {
+
+  p6_return_words 'scala' "$"
 }
