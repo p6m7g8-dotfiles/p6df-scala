@@ -85,5 +85,5 @@ p6df::modules::scala::prompt::lang() {
 ######################################################################
 p6df::modules::scala::prompt::env() {
 
-  p6_return_words 'scala' "$"
+  p6_return_words 'scala' '$SCALAENV_ROOT'
 }
