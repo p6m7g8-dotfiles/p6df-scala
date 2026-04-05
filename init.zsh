@@ -1,5 +1,11 @@
 # shellcheck shell=bash
 ######################################################################
+#<
+#
+# Function: p6df::modules::scala::deps()
+#
+#>
+######################################################################
 p6df::modules::scala::deps() {
   ModuleDeps=(
     p6m7g8-dotfiles/p6common
@@ -8,6 +14,13 @@ p6df::modules::scala::deps() {
 }
 
 ######################################################################
+#<
+#
+# Function: p6df::modules::scala::langmgr::init()
+#
+#  Environment:	 P6_DFZ_SRC_DIR
+#>
+######################################################################
 p6df::modules::scala::langmgr::init() {
 
   p6df::core::lang::mgr::init "$P6_DFZ_SRC_DIR/scalaenv/scalaenv" "scala"
@@ -15,6 +28,12 @@ p6df::modules::scala::langmgr::init() {
   p6_return_void
 }
 
+######################################################################
+#<
+#
+# Function: p6df::modules::scala::langs()
+#
+#>
 ######################################################################
 p6df::modules::scala::langs() {
 
@@ -31,25 +50,6 @@ p6df::modules::scala::langs() {
   p6_return_void
 }
 
-######################################################################
-#<
-#
-# Function: p6df::modules::scala::deps()
-#
-#>
-######################################################################
-#<
-#
-# Function: p6df::modules::scala::langs()
-#
-#>
-######################################################################
-#<
-#
-# Function: p6df::modules::scala::langmgr::init()
-#
-#  Environment:	 P6_DFZ_SRC_DIR
-#>
 ######################################################################
 #<
 #
