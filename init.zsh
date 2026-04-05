@@ -16,6 +16,21 @@ p6df::modules::scala::deps() {
 ######################################################################
 #<
 #
+# Function: p6df::modules::scala::langmgr::init()
+#
+#  Environment:	 P6_DFZ_SRC_DIR
+#>
+######################################################################
+p6df::modules::scala::langmgr::init() {
+
+  p6df::core::lang::mgr::init "$P6_DFZ_SRC_DIR/scalaenv/scalaenv" "scala"
+
+  p6_return_void
+}
+
+######################################################################
+#<
+#
 # Function: p6df::modules::scala::langs()
 #
 #>
@@ -31,21 +46,6 @@ p6df::modules::scala::langs() {
   scalaenv install -f "$latest"
   scalaenv global "$latest"
   scalaenv rehash
-
-  p6_return_void
-}
-
-######################################################################
-#<
-#
-# Function: p6df::modules::scala::langmgr::init()
-#
-#  Environment:	 P6_DFZ_SRC_DIR
-#>
-######################################################################
-p6df::modules::scala::langmgr::init() {
-
-  p6df::core::lang::mgr::init "$P6_DFZ_SRC_DIR/scalaenv/scalaenv" "scala"
 
   p6_return_void
 }
