@@ -75,10 +75,10 @@ p6df::modules::scala::prompt::lang() {
 ######################################################################
 #<
 #
-# Function: words scala $SCALAENV_ROOT = p6df::modules::scala::prompt::env()
+# Function: words scala = p6df::modules::scala::prompt::env()
 #
 #  Returns:
-#	words - scala $SCALAENV_ROOT
+#	words - scala
 #
 #  Environment:	 SCALAENV_ROOT
 #>
